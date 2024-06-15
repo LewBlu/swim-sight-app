@@ -60,6 +60,17 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "development-mobile": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development-mobile.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -72,6 +83,9 @@
             },
             "development": {
               "buildTarget": "swim-sight-app:build:development"
+            },
+            "development-mobile": {
+              "buildTarget": "swim-sight-app:build:development-mobile"
             }
           },
           "defaultConfiguration": "development"
