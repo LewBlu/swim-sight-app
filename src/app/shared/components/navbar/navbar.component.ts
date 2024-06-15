@@ -15,24 +15,25 @@ export class NavbarComponent {
   documentClick(event: any): void {
     if (!this.element.nativeElement.contains(event.target)){
       this.showProfileMenu = false;
+      this.showMobileMenu = false;
     }
   }
-  showProfileMenu: boolean = false;
+
+  public showProfileMenu: boolean = false;
+  public showMobileMenu: boolean = false;
 
   constructor(private element: ElementRef, private authService: AuthService) {}
 
-  toggleProfileMenu() {
+  public toggleProfileMenu() {
     this.showProfileMenu = !this.showProfileMenu;
   }
 
-  hideProfileMenu(event: Event) {
-    if (!this.element.nativeElement.contains(event.target)){
-      this.showProfileMenu = false;
-    }
+  public toggleMobileMenu() {
+    this.showMobileMenu = !this.showMobileMenu;
   }
 
   // When the user clicks 'Sign out' from within the profile menu
-  onLogout() {
+  public onLogout() {
     this.authService.logoutUser();
   }
 }
