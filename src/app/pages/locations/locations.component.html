@@ -1,1 +1,5 @@
-<p>locations works!</p>
+<div class="flex flex-wrap justify-center mt-2">
+  @for(location of locations; track location) {
+  <app-location-card [location]="location"></app-location-card>
+  }
+</div>
