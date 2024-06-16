@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCoffee, faTemperatureThreeQuarters, faWind } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faFish, faTemperatureThreeQuarters, faWind } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -16,6 +16,7 @@ export class LocationCardComponent implements OnInit{
   public weather!: {temp: string, wind: string};
   public faTemperatureThreeQuarters = faTemperatureThreeQuarters;
   public faWind = faWind;
+  public faFish = faFish;
   public showWeather: boolean = false;
 
   constructor(private http: HttpClient) {}
