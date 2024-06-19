@@ -1,18 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCoffee, faFish, faTemperatureThreeQuarters, faWind } from '@fortawesome/free-solid-svg-icons';
+import { faFish, faTemperatureThreeQuarters, faWind } from '@fortawesome/free-solid-svg-icons';
+import { Location } from '../../../shared/models/location';
 
 
 @Component({
   selector: 'app-location-card',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, RouterModule],
   templateUrl: './location-card.component.html',
   styleUrl: './location-card.component.scss'
 })
 export class LocationCardComponent implements OnInit{
-  @Input() public location!: {name: string, lat: string, long: string};
+  @Input() public location!: Location;
   public weather!: {temp: string, wind: string};
   public faTemperatureThreeQuarters = faTemperatureThreeQuarters;
   public faWind = faWind;

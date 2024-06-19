@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationCardComponent } from './location-card/location-card.component';
-import { HttpClient } from '@angular/common/http';
+import { LocationsService } from '../../shared/services/locations.service';
+import { Location } from '../../shared/models/location';
 
 @Component({
   selector: 'app-locations',
@@ -10,12 +11,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './locations.component.scss'
 })
 export class LocationsComponent implements OnInit {
-  public locations: any;
+  public locations!: Location[];
 
-  constructor(private http: HttpClient) {}
+  constructor(private locationService: LocationsService) {}
 
   ngOnInit(): void {
-    this.http.get('api/location').subscribe(locations => {
+    this.locationService.locations.subscribe((locations: Location[]) => {
       this.locations = locations;
     });
   }

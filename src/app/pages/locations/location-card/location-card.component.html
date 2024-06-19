@@ -9,13 +9,14 @@
       </div>
       <div class="flex flex-col justify-between flex-grow">
           <p class="leading-relaxed text-base text-gray-600">
+              <a [routerLink]="[location.id]">link</a><br>
               Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.
           </p>
       </div>
       @if(showWeather) {
       <ul class="flex mt-2 mb-0">
-        <li><fa-icon [icon]="faTemperatureThreeQuarters"></fa-icon> {{ weather.temp}}</li>
-        <li class="mx-4"><fa-icon [icon]="faWind"></fa-icon> {{ weather.wind }}</li>
+        <li>{{ weather.temp}}<fa-icon [icon]="faTemperatureThreeQuarters" class="ms-2"></fa-icon></li>
+        <li class="mx-4">{{ weather.wind }}<fa-icon [icon]="faWind" class="ms-2"></fa-icon></li>
       </ul>
       }
   </div>
