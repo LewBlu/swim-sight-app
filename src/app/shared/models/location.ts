@@ -4,4 +4,5 @@ export interface Location {
   lat: string;
   long: string;
   owner_id: number;
+  description: string;
 }
