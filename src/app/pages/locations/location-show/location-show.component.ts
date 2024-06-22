@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { LocationsService } from '../../../shared/services/locations.service';
 import { Location } from '../../../shared/models/location';
 import { ActivatedRoute } from '@angular/router';
+import { LakeCardComponent } from './lake-card/lake-card.component';
 
 @Component({
   selector: 'app-location-show',
   standalone: true,
-  imports: [],
+  imports: [LakeCardComponent],
   templateUrl: './location-show.component.html',
   styleUrl: './location-show.component.scss'
 })
